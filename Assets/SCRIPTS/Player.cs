@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 { 
-    int inventoryCap = 27;
+ 
     public ItemsDataBase itemsDataBase;
     Dictionary<string, int> InventoryItems = new Dictionary<string, int>();
     // // Start is called before the first frame update
     void Start()
     {
-         InventoryItems.Add("WOOD_SWORD", 2);
+         InventoryItems.Add("WOOD_SWORD", 5);
          InventoryItems.Add("WOOD_BLOCK", 1);
+         
     }
 
     // Update is called once per frame
@@ -27,10 +28,6 @@ public class Player : MonoBehaviour
          
 
     } 
-
-
-
-
     void Movement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -40,7 +37,6 @@ public class Player : MonoBehaviour
         transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, 0, verticalInput * movementSpeed * Time.deltaTime);
 
     }
-
     void ShowItems()
     {
         if (InventoryItems.Count == 0)

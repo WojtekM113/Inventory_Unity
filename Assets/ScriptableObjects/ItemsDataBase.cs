@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dictionary", menuName = "ScriptableObjects/ItemdsDatabaseScriptableObject", order = 2)]
 public class ItemsDataBase : ScriptableObject
 {
-    public Dictionary<string, InventoryItem> itemsDictionary = new Dictionary<string, InventoryItem>();
-    public InventoryItem woodSword;
-    public InventoryItem woodBlock;
-    public InventoryItem diamond;
+    public Dictionary<string, Item> itemsDictionary = new Dictionary<string, Item>();
+    public  Item woodSword;
+    public  Item woodBlock;
+    public  Item diamond;
 
     public void OnEnable()
     {
-        itemsDictionary = new Dictionary<string, InventoryItem>()
+        itemsDictionary = new Dictionary<string, Item>()
         {
             {"WOOD_SWORD", woodSword},
             {"WOOD_BLOCK", woodBlock},
