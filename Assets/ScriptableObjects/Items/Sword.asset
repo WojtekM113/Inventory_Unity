@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d3cbcab6f713447a319640433e6763, type: 3}
-  m_Name: Wood block
+  m_Script: {fileID: 11500000, guid: 0b69978a06abd0142867e049a303dd99, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  itemID: WOOD_BLOCK
-  quantinty: 10
+  newName: sword

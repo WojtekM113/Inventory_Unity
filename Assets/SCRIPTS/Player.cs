@@ -7,13 +7,12 @@ public class Player : MonoBehaviour
 { 
     int inventoryCap = 27;
     public ItemsDataBase itemsDataBase;
-    List <InventoryItem> InventoryItems = new List<InventoryItem>();
+    Dictionary<string, int> InventoryItems = new Dictionary<string, int>();
     // // Start is called before the first frame update
     void Start()
     {
-         InventoryItems.Add(itemsDataBase.itemsDictionary["WOOD_SWORD"]);
-         InventoryItems.Add(itemsDataBase.itemsDictionary["WOOD_SWORD"]);
-         InventoryItems.Add(itemsDataBase.itemsDictionary["WOOD_BLOCK"]);
+         InventoryItems.Add("WOOD_SWORD", 2);
+         InventoryItems.Add("WOOD_BLOCK", 1);
     }
 
     // Update is called once per frame
@@ -50,15 +49,10 @@ public class Player : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < InventoryItems.Count; i++)
+            foreach (KeyValuePair<string,int> inventoryItem in InventoryItems)
             {
-                Debug.Log("-----------------");
-                
-                Debug.Log(InventoryItems[i]);
-                Debug.Log(InventoryItems[i].quantinty);
-
-
-                
+                Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key]);
+                Debug.Log(inventoryItem.Value);
             }
         }
     }
