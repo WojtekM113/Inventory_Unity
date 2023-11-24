@@ -47,8 +47,12 @@ public class Player : MonoBehaviour
         {
             foreach (KeyValuePair<string,int> inventoryItem in InventoryItems)
             {
-                Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key]);
+                Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key].itemName);
+                Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key].isStackable);
+                Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key].canBePlaced);
                 Debug.Log(inventoryItem.Value);
+                
+                
             }
         }
     }
