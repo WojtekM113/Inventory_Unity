@@ -6,5 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 
 {
-    public string newName;
+    public string itemName;
+    public bool isStackable = false;
+    public bool canBePlaced = false;
 }

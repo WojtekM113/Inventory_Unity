@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b69978a06abd0142867e049a303dd99, type: 3}
   m_Name: Diamond
   m_EditorClassIdentifier: 
-  newName: diamond
+  itemName: diamond
+  isStackable: 1
+  canBePlaced: 0
