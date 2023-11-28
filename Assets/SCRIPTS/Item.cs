@@ -6,5 +6,8 @@ using UnityEngine;
 public class Item : ScriptableObject
 
 {
-    public string newName;
+    public string itemName;
+    public Sprite itemIcon;
+    
+    
 }
