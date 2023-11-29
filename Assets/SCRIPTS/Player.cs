@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // // Start is called before the first frame update
     void Start()
     {
-        Inventory.InventoryItems.Add("WOOD_SWORD", 5);
+        Inventory.AddItem("WOOD_SWORD");
     }
 
     // Update is called once per frame
