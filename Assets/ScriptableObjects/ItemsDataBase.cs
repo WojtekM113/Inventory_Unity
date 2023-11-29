@@ -17,13 +17,11 @@ public class ItemsDataBase : ScriptableObject
             {"WOOD_SWORD", woodSword},
             {"WOOD_BLOCK", woodBlock},
             {"DIAMOND", diamond}
-     
         };
     }
    
 
 
-     
-   
+    
 }
  

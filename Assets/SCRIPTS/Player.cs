@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
         {
              ShowItems();
         }
-        
         Movement();
     } 
     
@@ -34,7 +33,6 @@ public class Player : MonoBehaviour
         int movementSpeed = 10;
 
         transform.position += new Vector3(horizontalInput * movementSpeed * Time.deltaTime, 0, verticalInput * movementSpeed * Time.deltaTime);
-
     }
 
  

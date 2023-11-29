@@ -7,7 +7,7 @@ public class Inventory : ScriptableObject
 {
     public ItemsDataBase itemsDataBase;
     public Dictionary<string, int> InventoryItems = new Dictionary<string, int>();
-
+    
     public void CheckItems()
     {
         foreach (KeyValuePair<string,int> inventoryItem in InventoryItems)
@@ -15,5 +15,5 @@ public class Inventory : ScriptableObject
             Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key].itemName);
             Debug.Log(inventoryItem.Value);
         }   
-    }  
+    }   
 }
