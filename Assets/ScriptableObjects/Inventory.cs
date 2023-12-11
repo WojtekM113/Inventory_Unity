@@ -17,6 +17,7 @@ public class Inventory : ScriptableObject
         {    
             Debug.Log(inventoryItem.itemName);
             Debug.Log(inventoryItem.itemAmount);
+             
         }   
     }
 
@@ -28,20 +29,34 @@ public class Inventory : ScriptableObject
             //to dodajemy amount a nie zmieniamy.
             inventorySlots[slotIndex].itemName = itemKey;
             inventorySlots[slotIndex].itemAmount = itemAmount;
-            return;
+            inventorySlots[slotIndex].itemIndex = slotIndex;  
+            
+            
+            // znajdź pierwszy wolny slot albo pierwszy slot z takim samym itemKey. Jezeli slot ma taki sam itemKey to dodaj itemAmount do itemAmount w tym slocie
+            // jezeli nie ma takiego slotu to dodaj nowy slot z tym itemKey i itemAmount
+
+            for (int i = 0; i < inventorySlots.Count; i++)
+            {
+                if (inventorySlots[i].itemName == itemKey && inventorySlots[i].itemIndex == slotIndex)
+                {
+                    inventorySlots[i].itemAmount += itemAmount;
+                    return;
+                }
+            }
+            
         }
         
         // znajdź pierwszy wolny slot albo pierwszy slot z takim samym itemKey. Jezeli slot ma taki sam itemKey to dodaj itemAmount do itemAmount w tym slocie
         // jezeli nie ma takiego slotu to dodaj nowy slot z tym itemKey i itemAmount
 
-        for (int i = 0; i < inventorySlots.Count; i++)
+        /*for (int i = 0; i < inventorySlots.Count; i++)
         {
-            if (inventorySlots[i].itemName == itemKey)
+            if (inventorySlots[i].itemName == itemKey && inventorySlots[i].itemIndex == slotIndex)
             {
                 inventorySlots[i].itemAmount += itemAmount;
                 return;
             }
-        }
+        }*/
         
         //Ew jak mamy nieograniczone inventory, stworzy nowy slot i dodaj do listy
         /*InventorySlot inventorySlot = new InventorySlot{itemName = itemKey, itemAmount = itemAmount};
@@ -73,4 +88,5 @@ public class InventorySlot
 {
     public string itemName;
     public int itemAmount;
+    public int itemIndex;
 }
