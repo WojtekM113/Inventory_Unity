@@ -2,54 +2,98 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
-{ 
- 
-    public ItemsDataBase itemsDataBase;
-    Dictionary<string, int> InventoryItems = new Dictionary<string, int>();
+{
+    [SerializeField] private GameObject inventoryUi;
+    private bool isInventoryUiActive = false;
+    public Inventory Inventory;
+    
     // // Start is called before the first frame update
     void Start()
     {
-         InventoryItems.Add("WOOD_SWORD", 5);
-         InventoryItems.Add("WOOD_BLOCK", 1);
          
-    }
+    }     
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
-             ShowItems();
+            ShowItems();
         }
-
         Movement();
-         
 
+         
     } 
+    
     void Movement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         int movementSpeed = 10;
 
-        transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, 0, verticalInput * movementSpeed * Time.deltaTime);
-
+        transform.position += new Vector3(horizontalInput * movementSpeed * Time.deltaTime, 0, verticalInput * movementSpeed * Time.deltaTime);
     }
+
+ 
     void ShowItems()
     {
-        if (InventoryItems.Count == 0)
+       // SceneManager.LoadSceneAsync("Scenes/PlayerInventory"); 
+        //gameobject set active    
+        if (!isInventoryUiActive)
         {
-            Debug.LogWarning("NO_ITEMS");
-        }
-        else
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("PlayerInventory"));
+            isInventoryUiActive = true;
+            Inventory.CheckItems();
+            
+        }else 
         {
-            foreach (KeyValuePair<string,int> inventoryItem in InventoryItems)
-            {
-                Debug.Log(itemsDataBase.itemsDictionary[inventoryItem.Key]);
-                Debug.Log(inventoryItem.Value);
-            }
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("SampleScene"));
+            isInventoryUiActive = false;
         }
     }
+
+         
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

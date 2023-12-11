@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class blockScript : MonoBehaviour
+public class CollectableItem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -12,11 +12,6 @@ public class blockScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    void OnTriggerEnter()
     {
         
     }
