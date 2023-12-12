@@ -23,6 +23,17 @@ public class Player : MonoBehaviour
         {
             ShowItems();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            Inventory.AddItem("WOOD_SWORD",2,1);     
+        }
+        
+        if (Input.GetKeyDown(KeyCode.RightAlt))
+        {
+            Inventory.RemoveItem("WOOD_SWORD",1);
+        }
+        
         Movement();
 
          
@@ -55,8 +66,7 @@ public class Player : MonoBehaviour
         }
     }
 
-         
-    
+ 
     
 }
 
