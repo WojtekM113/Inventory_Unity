@@ -11,8 +11,7 @@ public class Inventory : ScriptableObject
 
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
     //Dictionary tylko pomaga nam w szybkim dostępie do danych.
-
-    //    private bool CanAddItem = true;
+ 
 
     public void CheckItems()
     {
@@ -66,11 +65,7 @@ public class Inventory : ScriptableObject
     
     public void RemoveItem(string itemKey, int i)
     {
-        /*
-         * Sprawdzamy czy mamy już ten item w naszym inventory.
-         * Jeśli tak to zmniejszamy jego ilość o 1.
-         * Jeśli nie to zwracamy komunikat o błędzie.
-         */
+        
         if (itemKey == inventorySlots[i].itemName)
         {
             inventorySlots[i].itemAmount--;
@@ -79,12 +74,7 @@ public class Inventory : ScriptableObject
 
         Debug.LogError("Nie masz tego itemu w swoim inventory.");
     }
-
-
-
-
-
-
+    
     [Serializable]
     public class InventorySlot
     {

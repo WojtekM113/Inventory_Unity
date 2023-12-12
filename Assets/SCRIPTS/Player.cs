@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameObject inventoryUi;
+    
     private bool isInventoryUiActive = false;
     public Inventory Inventory;
     

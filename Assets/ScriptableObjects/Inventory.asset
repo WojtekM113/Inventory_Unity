@@ -18,7 +18,7 @@ MonoBehaviour:
     itemAmount: 0
     itemIndex: 0
   - itemName: WOOD_SWORD
-    itemAmount: 26
+    itemAmount: 16
     itemIndex: 1
   - itemName: 
     itemAmount: 0

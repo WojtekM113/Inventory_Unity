@@ -2,25 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class InventoryPanel : MonoBehaviour
 {
     public Inventory playerInventory;
     public static bool isInventoryActive;
-    public GameObject gameObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [FormerlySerializedAs("gameObject")] public GameObject panelGameObject;
+    public ItemsDataBase itemsDataBase;
+    
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            gameObject.SetActive(!gameObject.activeSelf);
-            isInventoryActive = gameObject.activeSelf;
+            panelGameObject.SetActive(!panelGameObject.activeSelf);
+            isInventoryActive = panelGameObject.activeSelf;
         }
     }
 }
