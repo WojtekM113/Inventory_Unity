@@ -12,12 +12,13 @@ public class Inventory : ScriptableObject
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
     //Dictionary tylko pomaga nam w szybkim dostępie do danych.
 
-    private bool CanAddItem = true;
+    //    private bool CanAddItem = true;
 
     public void CheckItems()
     {
         foreach (InventorySlot inventoryItem in inventorySlots)
         {
+            //itemsDataBase.itemsDictionary[inventoryItem.itemName].itemName
             Debug.Log(inventoryItem.itemName);
             Debug.Log(inventoryItem.itemAmount);
 
@@ -36,7 +37,6 @@ public class Inventory : ScriptableObject
             inventorySlots[slotIndex].itemName = itemKey;
 
         }
-
         // znajdź pierwszy wolny slot albo pierwszy slot z takim samym itemKey.
         // Jezeli slot ma taki sam itemKey to dodaj itemAmount do itemAmount w tym slocie
         // jezeli nie ma takiego slotu to dodaj nowy slot z tym itemKey i itemAmount 
@@ -63,7 +63,7 @@ public class Inventory : ScriptableObject
     //Musisz przewidzieć że nadpisujesz item. Co się stanie z itemkiem który był w tym slocie poprzednio?
 
 
-
+    
     public void RemoveItem(string itemKey, int i)
     {
         /*
