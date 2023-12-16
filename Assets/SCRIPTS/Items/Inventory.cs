@@ -13,16 +13,16 @@ public class Inventory : ScriptableObject
     //Dictionary tylko pomaga nam w szybkim dostępie do danych.
  
 
-    public void CheckItems()
-    {
-        foreach (InventorySlot inventoryItem in inventorySlots)
-        {
-            //itemsDataBase.itemsDictionary[inventoryItem.itemName].itemName
-            Debug.Log(inventoryItem.itemName);
-            Debug.Log(inventoryItem.itemAmount);
-
-        }
-    }
+    // public void CheckItems()
+    // {
+    //     foreach (InventorySlot inventoryItem in inventorySlots)
+    //     {
+    //         //itemsDataBase.itemsDictionary[inventoryItem.itemName].itemName
+    //         Debug.Log(inventoryItem.itemName);
+    //         Debug.Log(inventoryItem.itemAmount);
+    //
+    //     }
+    // }
 
     public void AddItem(string itemKey, int itemAmount = 1, int slotIndex = -1)
     {

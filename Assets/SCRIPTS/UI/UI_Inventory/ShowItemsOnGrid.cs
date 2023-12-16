@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,6 +8,9 @@ public class ShowItemsOnGrid : MonoBehaviour
 {
     public ItemsDataBase dataBase;
     public Inventory playerInventory;
-    
-    
+
+    private void Update()
+    {
+       
+    }
 }
