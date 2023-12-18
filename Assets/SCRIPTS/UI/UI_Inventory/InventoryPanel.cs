@@ -24,6 +24,8 @@ public class InventoryPanel : MonoBehaviour
     
     void Update()
     {
+        //if item = 0, delete?
+        
         if(Input.GetKeyDown(KeyCode.Q))
         {
             panelGameObject.SetActive(!panelGameObject.activeSelf);
@@ -35,7 +37,6 @@ public class InventoryPanel : MonoBehaviour
                 {
                     ShowItemsInInventory(playerInventory.inventorySlots[i].itemName, playerInventory.inventorySlots[i].itemAmount);
                 }
-
             }
             else
             {

@@ -15,15 +15,15 @@ MonoBehaviour:
   itemsDataBase: {fileID: 11400000, guid: 47d644a687fa83f46ba8458b6fa8d442, type: 2}
   inventorySlots:
   - itemName: WOOD_SWORD
-    itemAmount: 22
+    itemAmount: 24
     itemIndex: 1
   - itemName: WOOD_SWORD
-    itemAmount: 6
+    itemAmount: 8
     itemIndex: 1
   - itemName: DIAMOND
     itemAmount: 34
     itemIndex: 0
-  - itemName: 
+  - itemName: WOOD_BLOCK
     itemAmount: 0
     itemIndex: 0
   - itemName: 
