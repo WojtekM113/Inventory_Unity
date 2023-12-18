@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -14,9 +15,9 @@ public class InventoryPanel : MonoBehaviour
     public static bool IsInventoryActive;
     
     [FormerlySerializedAs("gameObject")] 
-    public GameObject panelGameObject;
-
-    public GameObject ItemContainer;
+    [SerializeField] private GameObject panelGameObject; 
+    [FormerlySerializedAs("ItemContainer")] [SerializeField] private GameObject ItemIconContainer;
+    [SerializeField] private GameObject ItemNameContainer;
     
     public ItemsDataBase itemsDataBase;
     
@@ -43,8 +44,6 @@ public class InventoryPanel : MonoBehaviour
                     Destroy(child.gameObject);
                 }
             }
-            
-            
         }
     }
 
@@ -65,13 +64,11 @@ public class InventoryPanel : MonoBehaviour
             Debug.Log(itemAmount);
             
                
-            GameObject showItem = Instantiate(ItemContainer, panelGameObject.transform);
+            GameObject showItem = Instantiate(ItemIconContainer, panelGameObject.transform);
             showItem.GetComponent<Image>().sprite = itemIcon;
-        }
-       
-        
-        
-       
 
+            GameObject showNameItem = Instantiate(ItemNameContainer, showItem.transform);
+            showNameItem.GetComponent<TextMeshProUGUI>().text = itemName;
+        }
     }
 }
