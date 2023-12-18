@@ -12,17 +12,7 @@ public class Inventory : ScriptableObject
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
     //Dictionary tylko pomaga nam w szybkim dostępie do danych.
  
-
-    // public void CheckItems()
-    // {
-    //     foreach (InventorySlot inventoryItem in inventorySlots)
-    //     {
-    //         //itemsDataBase.itemsDictionary[inventoryItem.itemName].itemName
-    //         Debug.Log(inventoryItem.itemName);
-    //         Debug.Log(inventoryItem.itemAmount);
-    //
-    //     }
-    // }
+ 
 
     public void AddItem(string itemKey, int itemAmount = 1, int slotIndex = -1)
     {
@@ -36,9 +26,7 @@ public class Inventory : ScriptableObject
             inventorySlots[slotIndex].itemName = itemKey;
 
         }
-        // znajdź pierwszy wolny slot albo pierwszy slot z takim samym itemKey.
-        // Jezeli slot ma taki sam itemKey to dodaj itemAmount do itemAmount w tym slocie
-        // jezeli nie ma takiego slotu to dodaj nowy slot z tym itemKey i itemAmount 
+ 
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             if (inventorySlots[i].itemName == itemKey)
@@ -46,7 +34,7 @@ public class Inventory : ScriptableObject
                 inventorySlots[i].itemAmount += itemAmount;
 
                 /*if (inventorySlots[i].itemAmount > 64 )
-                {                        
+                {                           
                 Szukamy pustego slota
                 dodajemy do niego item
                 I tak za każdym razem do czasu aż nie skończą nam sie sloty w ekwipunku

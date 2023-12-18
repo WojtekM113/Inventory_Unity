@@ -340,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: b7f79f835731ac5488f891f8ad9ddcce, type: 2}
   panelGameObject: {fileID: 1166884471}
+  ItemContainer: {fileID: 5678197935700251109, guid: c284a8ebc945e2e42ae317883f199f73, type: 3}
   itemsDataBase: {fileID: 11400000, guid: 47d644a687fa83f46ba8458b6fa8d442, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

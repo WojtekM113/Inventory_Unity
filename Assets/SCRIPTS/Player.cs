@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     
     void Movement()
     {
-        if(InventoryPanel.isInventoryActive) return;
+        if(InventoryPanel.IsInventoryActive) return;
         
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");

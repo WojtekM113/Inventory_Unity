@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsDataBase: {fileID: 11400000, guid: 47d644a687fa83f46ba8458b6fa8d442, type: 2}
   inventorySlots:
-  - itemName: 
-    itemAmount: 0
-    itemIndex: 0
   - itemName: WOOD_SWORD
-    itemAmount: 16
+    itemAmount: 22
     itemIndex: 1
-  - itemName: 
-    itemAmount: 0
+  - itemName: WOOD_SWORD
+    itemAmount: 6
+    itemIndex: 1
+  - itemName: DIAMOND
+    itemAmount: 34
     itemIndex: 0
   - itemName: 
     itemAmount: 0
