@@ -16,22 +16,22 @@ MonoBehaviour:
   inventorySlots:
   - itemName: WOOD_SWORD
     itemAmount: 24
-    itemIndex: 1
+    itemIndex: 0
   - itemName: WOOD_SWORD
     itemAmount: 8
     itemIndex: 1
   - itemName: DIAMOND
-    itemAmount: 34
-    itemIndex: 0
+    itemAmount: 2
+    itemIndex: 2
   - itemName: WOOD_BLOCK
-    itemAmount: 0
-    itemIndex: 0
-  - itemName: 
-    itemAmount: 0
-    itemIndex: 0
-  - itemName: 
-    itemAmount: 0
-    itemIndex: 0
+    itemAmount: 15
+    itemIndex: 3
+  - itemName: DIAMOND
+    itemAmount: 3
+    itemIndex: 4
+  - itemName: WOOD_BLOCK
+    itemAmount: 4
+    itemIndex: 5
   - itemName: 
     itemAmount: 0
     itemIndex: 0

@@ -18,6 +18,7 @@ public class ItemsDataBase : ScriptableObject
             {"WOOD_BLOCK", woodBlock},
             {"DIAMOND", diamond}
         };
+        
     }
    
 

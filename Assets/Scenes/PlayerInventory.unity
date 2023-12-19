@@ -342,6 +342,7 @@ MonoBehaviour:
   panelGameObject: {fileID: 1166884471}
   ItemIconContainer: {fileID: 5678197935700251109, guid: c284a8ebc945e2e42ae317883f199f73, type: 3}
   ItemNameContainer: {fileID: 115941776829819837, guid: 09c5ea9e274e53945a191d62307fa46d, type: 3}
+  ItemAmountContainer: {fileID: 1977632410005869702, guid: 7a32d684f592d2f4d836eb132cecc2ac, type: 3}
   itemsDataBase: {fileID: 11400000, guid: 47d644a687fa83f46ba8458b6fa8d442, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
