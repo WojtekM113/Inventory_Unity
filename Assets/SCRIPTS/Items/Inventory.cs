@@ -11,9 +11,7 @@ public class Inventory : ScriptableObject
 
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
     //Dictionary tylko pomaga nam w szybkim dostępie do danych.
- 
- 
-
+    
     public void AddItem(string itemKey, int itemAmount = 1, int slotIndex = -1)
     {
         if (slotIndex != -1)
@@ -29,7 +27,7 @@ public class Inventory : ScriptableObject
  
         for (int i = 0; i < inventorySlots.Count; i++)
         {
-            if (inventorySlots[i].itemName == itemKey)
+            if (inventorySlots[i].itemName == itemKey && inventorySlots[i].itemIndex == slotIndex)
             {
                 inventorySlots[i].itemAmount += itemAmount;
 
@@ -48,19 +46,24 @@ public class Inventory : ScriptableObject
     }
 
     //Musisz przewidzieć że nadpisujesz item. Co się stanie z itemkiem który był w tym slocie poprzednio?
-
-
     
-    public void RemoveItem(string itemKey, int i)
+    public void RemoveItem(string itemKey, int itemAmount, int slotIndex = -1)
     {
-        
-        if (itemKey == inventorySlots[i].itemName)
+        if (slotIndex != -1)
         {
-            inventorySlots[i].itemAmount--;
-            return;
+            /*inventorySlots[slotIndex].itemAmount = itemAmount;*/
+            inventorySlots[slotIndex].itemIndex = slotIndex;
+            inventorySlots[slotIndex].itemName = itemKey;
         }
-
-        Debug.LogError("Nie masz tego itemu w swoim inventory.");
+        
+        for (int i = 0; i < inventorySlots.Count; i++)
+        {
+            if (inventorySlots[i].itemName == itemKey && inventorySlots[i].itemIndex == slotIndex)
+            {
+                inventorySlots[i].itemAmount -= itemAmount;
+            }
+        }
+        // Debug.LogError("Nie masz tego itemu w swoim inventory.");
     }
     
     [Serializable]

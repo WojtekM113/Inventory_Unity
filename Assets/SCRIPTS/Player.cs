@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.RightAlt))
         {
-            Inventory.RemoveItem("WOOD_SWORD",1);
+            Inventory.RemoveItem("WOOD_SWORD",1,1);
         }
         
         Movement();
