@@ -46,6 +46,8 @@ public class InventoryPanel : MonoBehaviour
                 {
                     Destroy(child.gameObject);
                 }
+                //nie usuwać tylko chować
+                //aktualizować podczas zmiany amount w inventory i pokazywać
             }
         }
     }
