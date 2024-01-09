@@ -19,9 +19,9 @@ public class InventoryPanel : MonoBehaviour
     [FormerlySerializedAs("ItemContainer")] [SerializeField] private GameObject ItemIconContainer;
     [SerializeField] private GameObject ItemNameContainer;
     [SerializeField] private GameObject ItemAmountContainer;
+    [SerializeField] private InventoryUiItem InventoryUiItemPrefab;
     
     public ItemsDataBase itemsDataBase;
-    
     
     void Update()
     {
@@ -39,6 +39,7 @@ public class InventoryPanel : MonoBehaviour
                     ShowItemsInInventory(playerInventory.inventorySlots[i].itemName, playerInventory.inventorySlots[i].itemAmount);
                 }
             }
+            
             else
             {
                 foreach (Transform child in panelGameObject.transform)
@@ -62,15 +63,9 @@ public class InventoryPanel : MonoBehaviour
             Sprite itemIcon = itemToShow.itemIcon;
             string itemName = itemToShow.itemName;
             int itemAmount = amount;
-            
-            GameObject showItem = Instantiate(ItemIconContainer, panelGameObject.transform);
-            showItem.GetComponent<Image>().sprite = itemIcon;
 
-            GameObject showNameItem = Instantiate(ItemNameContainer, showItem.transform);
-            showNameItem.GetComponent<TextMeshProUGUI>().text = itemName;
-
-            GameObject showAmountItem = Instantiate(ItemAmountContainer, showNameItem.transform);
-            showAmountItem.GetComponent<TextMeshProUGUI>().text = itemAmount.ToString();
+            InventoryUiItem newItem = Instantiate(InventoryUiItemPrefab, panelGameObject.transform);
+            newItem.SetItem(itemIcon,itemName,itemAmount.ToString());
         }
     }
 }
